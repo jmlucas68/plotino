@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotino: El Vuelo del Alma hacia lo Uno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET Y CONFIGURACIÓN GENERAL --- */
+        :root {
+            --color-fondo: #121212;
+            --color-texto: #E0E0E0;
+            --color-primario: #D4AF37; /* Oro antiguo */
+            --color-fondo-seccion: #1E1E1E;
+            --fuente-titulos: 'Cinzel', serif;
+            --fuente-cuerpo: 'Merriweather', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* --- ENCABEZADO (HERO SECTION) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 1)), url('https://upload.wikimedia.org/wikipedia/commons/e/e1/The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            color: white;
+            padding: 0 1rem;
+        }
+
+            .hero h1 {
+                font-family: var(--fuente-titulos);
+                font-size: 4rem;
+                font-weight: 700;
+                color: var(--color-primario);
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+                margin-bottom: 0.5rem;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                font-style: italic;
+                max-width: 700px;
+            }
+
+        .hero-arrow {
+            margin-top: 3rem;
+            font-size: 2rem;
+            color: var(--color-primario);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        /* --- ESTILOS DE SECCIÓN Y TÍTULOS --- */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+            section:last-of-type {
+                border-bottom: none;
+            }
+
+        h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.5rem;
+            color: var(--color-primario);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.8rem;
+            color: #c0c0c0;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--color-primario);
+            padding-left: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* --- CITAS --- */
+        blockquote {
+            background-color: var(--color-fondo-seccion);
+            border-left: 5px solid var(--color-primario);
+            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            position: relative;
+        }
+
+            blockquote::before {
+                content: '“';
+                font-family: var(--fuente-titulos);
+                font-size: 5rem;
+                color: var(--color-primario);
+                opacity: 0.1;
+                position: absolute;
+                top: -1rem;
+                left: 1rem;
+            }
+
+            blockquote footer {
+                text-align: right;
+                margin-top: 1rem;
+                font-style: normal;
+                font-size: 1rem;
+                color: #999;
+            }
+
+        /* --- INFLUENCIAS (LAYOUT DE DOS COLUMNAS) --- */
+        .influencias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+            .influencias-grid h3 {
+                margin-top: 0;
+            }
+
+        @media (max-width: 768px) {
+            .influencias-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- LISTAS Y ENLACES --- */
+        ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+            li::before {
+                content: '✧';
+                color: var(--color-primario);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+        a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+            a:hover {
+                color: #FFF;
+                text-shadow: 0 0 5px var(--color-primario);
+            }
+
+        .recursos a::after {
+            content: ' 🔗';
+            font-size: 0.8em;
+            display: inline-block;
+            opacity: 0.6;
+        }
+
+        /* --- IMÁGENES --- */
+        .img-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .img-caption {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* --- FOOTER --- */
+        footer.main-footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>PLOTINO</h1>
+        <p>El vuelo del alma solitaria hacia el Solitario</p>
+        <a href="#contenido" class="hero-arrow">↓</a>
+    </header>
+
+    <main id="contenido" class="container">
+
+        <section id="vida">
+            <h2>Vida y Contexto</h2>
+            <p>Plotino (204/5 – 270 d.C.) fue un filósofo helenístico, nacido probablemente en Licópolis, Egipto. Vivió en una época de profunda crisis para el Imperio Romano, el llamado "siglo III", un período de inestabilidad política, guerras civiles y decadencia económica. En este contexto de desintegración del mundo conocido, surgieron numerosas corrientes filosóficas y religiosas que ofrecían una vía de salvación o escape interior.</p>
+            <p>Estudió filosofía en Alejandría bajo la tutela del enigmático Amonio Saccas. A los 38 años, se unió a la expedición del emperador Gordiano III a Persia con la esperanza de conocer el pensamiento persa e indio. Tras el asesinato del emperador, Plotino logró llegar a Roma, donde fundó su propia escuela de filosofía. Su enseñanza, basada en una profunda interpretación de Platón, atrajo a un círculo de discípulos notables, entre ellos Porfirio, quien se convertiría en su biógrafo y editor.</p>
+            <div class="img-container">
+                <img src="https://raw.githubusercontent.com/jmlucas68/plotino/refs/heads/main/images/Escuela-de-Atenas.jpg" alt="Detalle de Plotino en 'La Escuela de Atenas' de Rafael" class="responsive">
+                <p class="img-caption">Detalle de Plotino en "La Escuela de Atenas" de Rafael. Su figura solitaria representa la introspección de su filosofía.</p>
+            </div>
+        </section>
+
+        <section id="pensamiento">
+            <h2>El Pensamiento: Las Tres Hipóstasis</h2>
+            <p>La filosofía de Plotino es un sistema metafísico grandioso que busca explicar la totalidad de la realidad a partir de un único principio supremo. Esta realidad está estructurada en tres niveles jerárquicos o "hipóstasis", que emanan una de la otra sin que la fuente pierda nada de su poder.</p>
+
+            <h3>1. Lo Uno (τὸ Ἕν) o El Bien</h3>
+            <p>Es el principio absoluto, la fuente de toda existencia. Es simple, trascendente y está más allá del Ser y del pensamiento. No puede ser descrito con palabras, ya que cualquier atributo lo limitaría. Es la unidad perfecta y la causa de todo, de la cual todo emana como la luz emana del sol.</p>
+            <blockquote>
+                <p>Así como el sol [...] es como un centro con respecto a la luz que de él se irradia por todas partes, y él mismo permanece fijo, así también el Uno está en todas partes y en ninguna parte. Si no estuviera en todas partes, todo se disolvería y perecería, porque no tendría ningún principio que lo mantuviera unido.</p>
+                <footer>Enéada V, 5, 9</footer>
+            </blockquote>
+
+            <h3>2. El Intelecto (Νοῦς)</h3>
+            <p>La primera emanación de lo Uno. Al "volverse" hacia lo Uno en un acto de contemplación, lo Uno se refleja y da lugar al Intelecto. El Intelecto es el mundo de las Formas platónicas, la inteligencia pura donde el sujeto y el objeto del pensamiento son idénticos. Contiene en sí la totalidad de las ideas de manera unificada y perfecta.</p>
+            <blockquote>
+                <p>El Intelecto es, pues, el primer ser y el primer pensamiento, y su pensamiento es la verdad. Y él mismo es la totalidad de los seres, no como si fueran una masa, sino de modo que cada uno es todos y todos son cada uno en una unidad sin confusión.</p>
+                <footer>Enéada V, 9, 8</footer>
+            </blockquote>
+
+
+            <h3>3. El Alma (Ψυχή)</h3>
+            <p>Emana del Intelecto. Es un principio intermedio entre el mundo inteligible y el mundo sensible. Posee una parte superior que permanece en contacto con el Intelecto y una parte inferior que desciende para dar forma, orden y vida a la materia, creando así el universo físico que percibimos. El alma individual es una parte de esta Alma del Mundo.</p>
+
+            <div class="img-container">
+                <img src="https://i.imgur.com/r62z3w3.png" alt="Diagrama de las hipóstasis de Plotino" class="responsive">
+                <p class="img-caption">Representación visual del proceso de emanación desde Lo Uno hasta la materia.</p>
+            </div>
+
+            <h3>El Retorno (Henosis)</h3>
+            <p>El propósito de la vida humana y de la filosofía es el retorno del alma a su origen. A través de la virtud, la dialéctica y la contemplación, el alma puede despojarse de las ataduras del cuerpo y del mundo sensible para ascender de nuevo, pasando por el Intelecto, hasta alcanzar la unión mística y extática con lo Uno (Henosis). Este es el famoso "vuelo del solitario hacia el Solitario".</p>
+            <blockquote>
+                <p>Ésta es la vida de los dioses y de los hombres divinos y bienaventurados: un desapego de todo lo demás de aquí abajo, un disgusto por las cosas terrenales, una fuga del solitario hacia el Solitario (φυγὴ μόνου πρὸς μόνον).</p>
+                <footer>Enéada VI, 9, 11</footer>
+            </blockquote>
+        </section>
+
+        <section id="influencias">
+            <h2>Influencias y Legado</h2>
+            <div class="influencias-grid">
+                <div class="influencias-recibidas">
+                    <h3>Influencias Recibidas</h3>
+                    <ul>
+                        <li><strong>Platón:</strong> Es su principal fuente. Plotino se consideraba un mero exégeta de Platón, reinterpretando su teoría de las Formas, el Bien y el alma.</li>
+                        <li><strong>Aristóteles:</strong> Adopta y adapta conceptos de su lógica, metafísica (como el acto y la potencia) y su idea del "Motor Inmóvil".</li>
+                        <li><strong>Estoicismo:</strong> Dialoga con su ética y su concepto de una providencia (pronoia) que ordena el cosmos.</li>
+                        <li><strong>Pitagorismo:</strong> Recoge la importancia de los números y la armonía como principios del universo.</li>
+                    </ul>
+                </div>
+                <div class="influencias-ejercidas">
+                    <h3>Influencia Ejercida</h3>
+                    <ul>
+                        <li><strong>San Agustín de Hipona:</strong> La lectura de los "libros de los platónicos" (textos de Plotino y Porfirio) fue clave en su conversión y en la formulación de la teología cristiana.</li>
+                        <li><strong>Neoplatonismo posterior:</strong> Sus discípulos como Porfirio y Jámblico, y filósofos como Proclo, sistematizaron y expandieron su pensamiento.</li>
+                        <li><strong>Filosofía Islámica y Judía:</strong> Influyó en pensadores como Al-Kindi, Avicena y Avicebrón a través de textos pseudoepigráficos.</li>
+                        <li><strong>Renacimiento:</strong> Fue redescubierto y traducido por Marsilio Ficino en Florencia, influyendo profundamente en el arte y el pensamiento renacentista.</li>
+                        <li><strong>Idealismo Alemán y Romanticismo:</strong> Su visión del Absoluto y la unión mística resonó en filósofos como Schelling y poetas como Coleridge.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="obras">
+            <h2>Obras Principales: Las Enéadas</h2>
+            <p>Plotino no escribió ningún libro como tal. Su obra consiste en los 54 tratados que redactó para su círculo de alumnos en Roma. Fue su discípulo Porfirio quien, tras la muerte del maestro, los editó y organizó en seis grupos de nueve tratados cada uno, de ahí el nombre de <strong>Enéadas</strong> (del griego ἐννέα, "nueve").</p>
+            <p>La organización no es cronológica, sino temática, siguiendo el camino ascendente del alma hacia lo Uno:</p>
+            <ul>
+                <li><strong>Enéada I:</strong> Ética y estética.</li>
+                <li><strong>Enéada II:</strong> Física y cosmología.</li>
+                <li><strong>Enéada III:</strong> Sobre el destino, la providencia y el amor.</li>
+                <li><strong>Enéada IV:</strong> Sobre el alma.</li>
+                <li><strong>Enéada V:</strong> Sobre el Intelecto.</li>
+                <li><strong>Enéada VI:</strong> Sobre el Ser y lo Uno.</li>
+            </ul>
+
+            <h3>Acceso a las Obras</h3>
+            <ul>
+                <li>
+                    <strong>Versión Gratuita (PDF):</strong>
+                    <a href="https://archive.org/details/plotinoeneadas_202003" target="_blank" rel="noopener noreferrer">Enéadas de Plotino en Archive.org</a> - Una edición completa en español, de dominio público.
+                </li>
+                <li>
+                    <strong>Versión Gratuita (Web):</strong>
+                    <a href="http://www.filosofia.org/cla/plot/plot.htm" target="_blank" rel="noopener noreferrer">Enéadas en filosofia.org</a> - Traducción de Jesús Igal, un recurso clásico en español.
+                </li>
+                <li>
+                    <strong>Compra Online (Edición de referencia):</strong>
+                    <a href="https://www.amazon.es/En%C3%A9adas-Plotino/s?k=En%C3%A9adas+Plotino" target="_blank" rel="noopener noreferrer">Enéadas de Plotino en Amazon (Editorial Gredos)</a> - Considerada la edición canónica en español, con excelente traducción y notas.
+                </li>
+            </ul>
+        </section>
+
+        <section id="recursos" class="recursos">
+            <h2>Fuentes y Recursos Externos</h2>
+            <p>Esta página se ha elaborado a partir de información de dominio público y fuentes académicas de referencia. Para profundizar en el estudio de Plotino, se recomiendan los siguientes enlaces:</p>
+
+            <h3>Artículos y Enciclopedias</h3>
+            <ul>
+                <li><a href="https://es.wikipedia.org/wiki/Plotino" target="_blank" rel="noopener noreferrer">Plotino en Wikipedia</a> - Un buen punto de partida con información general sobre su vida y obra.</li>
+                <li><a href="https://plato.stanford.edu/entries/plotinus/" target="_blank" rel="noopener noreferrer">Plotinus en la Stanford Encyclopedia of Philosophy (en inglés)</a> - Un artículo exhaustivo y riguroso de nivel académico.</li>
+                <li><a href="https://www.academia.edu/40605917/INTRODUCCI%C3%93N_A_PLOTINO" target="_blank" rel="noopener noreferrer">"Introducción a Plotino" en Academia.edu</a> - Un ejemplo de los muchos artículos y trabajos disponibles en esta plataforma.</li>
+                <li><a href="https://www.philosophica.info/voces/plotino/Plotino.html" target="_blank" rel="noopener noreferrer">Voz "Plotino" en la Enciclopedia Philosophica</a> - Un recurso académico online en español de gran calidad.</li>
+            </ul>
+
+            <h3>Fuentes Utilizadas para esta página</h3>
+            <ul>
+                <li>Porfirio, <em>Vida de Plotino</em>.</li>
+                <li>Plotino, <em>Enéadas</em> (Traducción de Jesús Igal, Ed. Gredos).</li>
+                <li>García Bazán, F. (2011). <em>Plotino y la mística de las tres hipóstasis</em>.</li>
+                <li>Artículos de la Stanford Encyclopedia of Philosophy y Wikipedia.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Página creada con fines educativos y de divulgación. Diseño y contenido por una IA en 2023.</p>
+    </footer>
+
+</body>
+</html>
